@@ -1,0 +1,75 @@
+
+article{
+  height:100%;
+  background-color: white;
+  border:1px solid black;
+  margin:1em 2em;
+  min-height: 200px;
+  max-height: 400px;
+}
+
+article header{
+  background-color: #eee;
+  height:70px;
+}
+
+article header:hover {
+    background-color: #D3D3D3;
+}
+
+article header .user-avatar{
+  float:left;
+  margin-left: 10px;
+  margin:10px;
+  border-radius: 10px;
+
+}
+article header .user-name{
+  font-size: 25px;
+  color: gray;
+  float:left;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+article header .user-fields{
+  float:right;
+  font:20px;
+  color:gray;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+article .user-message{
+  word-wrap: break-word;
+  margin:10px;
+  height:100px;
+}
+
+article footer{
+  border-top:1px solid #eee;
+  height:30px;
+}
+
+article .time{
+  float:left;
+  margin-right:5px;
+  margin-top: 5px;
+}
+
+article footer .icon{
+  float:right;
+  margin-right:5px;
+  margin-top: 5px;
+  opacity:0.5;
+  color:grey;
+}
+
+article footer .icon i.fa-flag:hover {
+   color: #008000;
+}
+article footer .icon i.fa-retweet:hover{
+   color: #008000;
+}
+article footer .icon i.fa-heart:hover{
+    color: #008000;
+}
