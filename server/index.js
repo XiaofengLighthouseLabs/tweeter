@@ -33,10 +33,10 @@ const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 app.use("/tweets", tweetsRoutes);
 
 // add POST
-app.post('/tweets/', (req, res) => {
+// app.post('/tweets/', (req, res) => {
 
-  // res.redirect("/tweets");
-  });
+//   // res.redirect("/tweets");
+//   });
 
 
 

@@ -31,3 +31,9 @@
   color: red;
 }
 
+.new-tweet input{
+  border-radius: 3px;
+}
+.new-tweet input: hover{
+  background-color:  #00008B;
+}

@@ -18,9 +18,33 @@ z-index: 10;
   margin-right: 5px;
 }
 
+#nav-bar .nav-button-icon {
+  height:50px;
+  width: 140px;
+  float: right;
+  color: green;
+  font-size: 25px;
+  text-align: center;
+  padding-left: 5px;
+  margin-top: 15px;
+  border: 1px solid black;
+  line-height: 40px;
+  border-radius: 5px;
+  background-color: #E6E6FA;
+}
+
+#nav-bar .nav-button-icon:active{
+  background-color: white;
+}
+
+
+
 #nav-bar .header{
   margin-left: 5px;
   font-size: 2em;
   line-height: 80px;
   float: left;
 }
+
+
+
