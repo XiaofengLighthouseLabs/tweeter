@@ -63,7 +63,7 @@ function createTweetHeader(user){
   $header_user.text(user.name);
   $header_fields.text(user.handle);
 
-  return $header.append($header_img, $header_user,$header_fields);
+  return $header.append($header_img, $header_user, $header_fields);
 };
 
 // for message
@@ -86,11 +86,10 @@ function createTweetFooter(created_at){
   let $footer_icon = $("<p>").addClass("icon");
 
   $footer_time .text(dateFromToday(created_at));
-  $footer_icon.append(creatTweetFooterIcon('fa-flag'),creatTweetFooterIcon('fa-retweet'),creatTweetFooterIcon('fa-heart'),);
+  $footer_icon.append(creatTweetFooterIcon('fa-heart'),creatTweetFooterIcon('fa-retweet'),creatTweetFooterIcon('fa-flag'),);
   $footer.append($footer_time, $footer_icon);
   return $footer;
 }
-
 
 // TweetElement from Header, Message and Footer
 function createTweetElement(tweet) {
@@ -116,16 +115,20 @@ function renderTweets(tweets){
 
 // use ajax to render tweets
 function loadTweets(){
-    $.ajax({
-       url: '/tweets',
-       method: 'GET',
-       success:function($updatedData){
-         renderTweets($updatedData);
-       }
-     });
-  }
-  loadTweets();
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    success:function($data){
+      renderTweets($data);
+    }
+  });
+}
+loadTweets();
 
+// function prependNewTweet(tweet){
+//   let newTweet = createTweetElement(tweet)
+//   $("#tweet-container").prepend(tweet)
+//  };
 
 // for form data
 
@@ -140,10 +143,11 @@ $(".new-tweet form").on('submit', function(event){
       method: 'POST',
       data: newText,
       success: function(){
-      // $("#tweet-container").empty();
+        $("#tweet-container").empty();
         loadTweets();
-      $(".new-tweet textarea").val("");
-      $(".counter").text("140");
+       // prependNewTweet(newText);
+        $(".new-tweet textarea").val("");
+        $(".counter").text("140");
       }
     });
 
@@ -152,7 +156,6 @@ $(".new-tweet form").on('submit', function(event){
   } else {
      alert("The text area is empty now!");
   }
-
 });
 
 // for toggle
@@ -161,7 +164,6 @@ $(document).ready(function(){
     $(".new-tweet").toggle();
     $("textarea").focus();
   });
-
 });
 
 // for time
@@ -171,10 +173,13 @@ function dateFromToday(tweet){
   var msPerDay = 24 * 60 * 60 * 1000;
   var msPerHour = 60 * 60 * 1000;
   let dayAgo = Math.round ((now.getTime() - tweetDate.getTime()) / msPerDay);
-     if(dayAgo >= 1){
-       return dayAgo + "days ago";
-     } else {
-      let hourAgo = Math.round ((now.getTime() - tweetDate.getTime()) / msPerHour);
-       return hourAgo + "hours ago";
-    }
-  };
+  if(dayAgo >= 1){
+    return dayAgo + "days ago";
+  } else {
+    let hourAgo = Math.round ((now.getTime() - tweetDate.getTime()) / msPerHour);
+    return hourAgo + "hours ago";
+  }
+};
+
+
+

@@ -22,7 +22,6 @@ article header .user-avatar{
   margin-left: 10px;
   margin:10px;
   border-radius: 10px;
-
 }
 article header .user-name{
   font-size: 25px;
@@ -57,12 +56,28 @@ article .time{
 }
 
 article footer .icon{
+   margin-top: 5px;
+ }
+
+article footer .icon i.fa-flag{
   float:right;
-  margin-right:5px;
-  margin-top: 5px;
+  margin-right:10px;
   opacity:0.5;
   color:grey;
 }
+article footer .icon i.fa-retweet{
+  float:right;
+  margin-right:10px;
+  opacity:0.5;
+  color:grey;
+}
+article footer .icon i.fa-heart{
+  float:right;
+  margin-right:10px;
+  opacity:0.5;
+  color:grey;
+}
+
 
 article footer .icon i.fa-flag:hover {
    color: #008000;
@@ -72,4 +87,13 @@ article footer .icon i.fa-retweet:hover{
 }
 article footer .icon i.fa-heart:hover{
     color: #008000;
+}
+article footer .icon i.fa-heart:active{
+    color:red;
+}
+article footer .icon i.fa-flag:active{
+    color:red;
+}
+article footer .icon i.fa-retweet:active{
+    color:red;
 }
